@@ -1,31 +1,5 @@
-# Adonis fullstack application
+<p align="center">
+  <a href="#" target="blank"><img src="https://lesplusbeauxdrapeauxdumonde.files.wordpress.com/2016/10/flag-1040531_1280.png?w=600&h=400" width="320" alt="Benin" /></a>
+</p>
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
-
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
-
-## Setup
-
-Use the adonis command to install the blueprint
-
-```bash
-adonis new yardstick
-```
-
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
+  <p align="center">API pour le découpage territorial au Bénin</p>
