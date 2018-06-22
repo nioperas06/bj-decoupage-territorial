@@ -34,3 +34,4 @@ Route
     Route.get('neighborhoods', 'NeighborhoodController.index')
   })
   .prefix('api/v1')
+  .namespace('Api/v1')
