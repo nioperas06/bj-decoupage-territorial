@@ -208,8 +208,17 @@ Récupérer tous les quartiers d'un arrondissement.
 
 Informations liées aux quartiers.
 
-## GET /neighborhoods
+## GET /neighborhoods?page={page}&page_size={page_size}
 Récupérer tous les quartiers.
+
++ Parameters
+    + page (integer, optional) - The page selection.
+        
+        + Default: `1`
+    
+    + page_size (integer, optional) - The maximum number of neighborhoods to return.
+        
+        + Default: `20`
 
 + Response 200 (application/json)
 
