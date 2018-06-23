@@ -1,9 +1,11 @@
 'use strict'
+const Neighborhood = use('App/Models/Neighborhood')
 
 class NeighborhoodController {
 
-  index({ response }) {
-    return response.json([])
+  async index({ response }) {
+    let neighborhoods = await Neighborhood.all()
+    return response.status(200).json(neighborhoods)
   }
 
 }

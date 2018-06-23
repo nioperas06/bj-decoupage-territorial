@@ -1,19 +1,36 @@
 'use strict'
+const Town = use('App/Models/Town')
 
 class TownController {
 
-  index({ response }) {
-    return response.json([])
+  async index({ response }) {
+    let towns = await Town.all()
+    return response.status(200).json(towns)
   }
 
-  findDistricts({ response }) {
-    return response.json([])
+  async findDistricts({ params, response }) {
+    try {
+      const town = await Town.findBy(
+        'name', params.name.toUpperCase()
+      )
+      const districts = await town.districts().fetch()
+      return response.status(200).json(districts)
+    } catch (e) {
+      return response.status(400).json(JSON.stringify(e))
+    }
   }
 
-  findNeighborhoods({ response }) {
-    return response.json([])
+  async findNeighborhoods({ params, response }) {
+    try {
+      const town = await Town.findBy(
+        'name', params.name.toUpperCase()
+      )
+      const neighborhoods = await town.neighborhoods().fetch()
+      return response.status(200).json(neighborhoods)
+    } catch (e) {
+      return response.status(400).json(JSON.stringify(e))
+    }
   }
-
 }
 
 module.exports = TownController

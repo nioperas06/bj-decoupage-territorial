@@ -639,7 +639,7 @@ INSERT INTO districts(id,name,town_id) VALUES
 (545, 'ZOUKOU', 77),
 (546, 'ZOGBODOMEY CENTRE', 77);
 
-INSERT INTO neighborhoods(id,name,neighborhood_id) VALUES
+INSERT INTO neighborhoods(id,name,district_id) VALUES
 (1, 'BOFOUNOU', 1),
 (2, 'FOUNOUGO-BOUTERA', 1),
 (3, 'FOUNOUGO-GAH', 1),
@@ -2805,7 +2805,7 @@ INSERT INTO neighborhoods(id,name,neighborhood_id) VALUES
 (2163, 'SOUMON-GAH', 204),
 (2164, 'TCHATCHOU', 204);
 
-INSERT INTO neighborhoods(id,name,neighborhood_id) VALUES
+INSERT INTO neighborhoods(id,name,district_id) VALUES
 (2165, 'TEKPAROU', 204),
 (2166, 'TOUKOSSARI', 204),
 (2167, 'WORIA', 204),
@@ -4890,7 +4890,7 @@ INSERT INTO neighborhoods(id,name,neighborhood_id) VALUES
 (4246, 'AKOKPONAWA', 429),
 (4247, 'FINGNINKANME', 429),
 (4248, 'MITRO', 429);
-INSERT INTO neighborhoods(id,name,neighborhood_id) VALUES
+INSERT INTO neighborhoods(id,name,district_id) VALUES
 (4249, 'YOKON', 429),
 (4250, 'ZOUNGUE', 429),
 (4251, 'ZOUNGUE SAI LAGARE', 429),
