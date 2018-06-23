@@ -14,8 +14,7 @@
 */
 
 const Route = use('Route')
-
-Route.on('/').render('welcome')
+const Helpers = use('Helpers')
 
 Route
   .group(() => {
@@ -35,3 +34,10 @@ Route
   })
   .prefix('api/v1')
   .namespace('Api/v1')
+
+
+  Route.any('*', ({ response }) => {
+    const pathToDist = Helpers.publicPath('../docs/')
+    return response.download(pathToDist)
+  })
+
