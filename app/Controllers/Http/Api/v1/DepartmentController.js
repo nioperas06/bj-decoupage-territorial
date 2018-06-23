@@ -8,12 +8,38 @@ class DepartmentController {
     return response.status(200).json(departments)
   }
 
-  findTowns({ response }) {
-    return response.json([])
+  async findTowns({ params, response }) {
+    try {
+      const department = await Department.findBy(
+        'name', params.name.toUpperCase()
+      )
+      const towns = await department.towns().fetch()
+      return response.status(200).json(towns)
+    } catch (error) {
+      return response.status(400).json({
+        'error': {
+          'status': 400,
+          'message': 'The requested resource was not found.'
+        }
+      })
+    }
   }
 
-  findDistricts({ response }) {
-    return response.json([])
+  async findDistricts({ params, response }) {
+    try {
+      const department = await Department.findBy(
+        'name', params.name.toUpperCase()
+      )
+      const districts = await department.districts().fetch()
+      return response.status(200).json(districts)
+    } catch (error) {
+      return response.status(400).json({
+        'error': {
+          'status': 400,
+          'message': 'The requested resource was not found.'
+        }
+      })
+    }
   }
 
   findNeighborhoods({ response }) {

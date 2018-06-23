@@ -6,9 +6,8 @@ class DistrictSchema extends Schema {
   up () {
     this.create('districts', (table) => {
       table.increments()
-      table.string('name').notNullable().unique()
+      table.string('name').notNullable()
       table.integer('town_id').unsigned()
-      table.timestamps()
     })
   }
 

@@ -8,7 +8,6 @@ class TownSchema extends Schema {
       table.increments()
       table.string('name').notNullable().unique()
       table.integer('department_id').unsigned()
-      table.timestamps()
     })
   }
 

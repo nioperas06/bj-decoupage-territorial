@@ -7,7 +7,6 @@ class DepartmentSchema extends Schema {
     this.create('departments', (table) => {
       table.increments()
       table.string('name').notNullable().unique()
-      table.timestamps()
     })
   }
 

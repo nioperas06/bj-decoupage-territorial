@@ -6,9 +6,8 @@ class NeighborhoodSchema extends Schema {
   up () {
     this.create('neighborhoods', (table) => {
       table.increments()
-      table.string('name').notNullable().unique()
+      table.string('name').notNullable()
       table.integer('neighborhood_id').unsigned()
-      table.timestamps()
     })
   }
 
