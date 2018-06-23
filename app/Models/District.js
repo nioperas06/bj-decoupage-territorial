@@ -4,7 +4,7 @@ const Model = use('Model')
 
 class District extends Model {
   static get hidden () {
-    return ['town_id']
+    return ['town_id', 'id']
   }
 
   neighborhoods() {

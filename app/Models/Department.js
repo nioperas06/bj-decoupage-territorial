@@ -14,6 +14,10 @@ class Department extends Model {
   neighborhoods() {
     return this.manyThrough('App/Models/Town', 'neighborhoods')
   }
+
+  static get hidden () {
+    return ['id']
+  }
 }
 
 module.exports = Department

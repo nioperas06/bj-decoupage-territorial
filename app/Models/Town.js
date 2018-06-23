@@ -12,7 +12,7 @@ class Town extends Model {
   }
 
   static get hidden () {
-    return ['department_id']
+    return ['department_id', 'id']
   }
 }
 

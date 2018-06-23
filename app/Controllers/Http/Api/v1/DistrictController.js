@@ -5,7 +5,9 @@ class DistrictController {
 
   async index({ response }) {
     let districts = await District.all()
-    return response.status(200).json(districts)
+    return response.status(200).json({
+      'districts': districts
+    })
   }
 
   async findNeighborhoods({ params, response }) {
@@ -14,7 +16,10 @@ class DistrictController {
         'name', params.name.toUpperCase()
       )
       const neighborhoods = await district.neighborhoods().fetch()
-      return response.status(200).json(neighborhoods)
+      return response.status(200).json({
+        'district': district.name,
+        'neighborhoods': neighborhoods
+      })
     } catch (e) {
       return response.status(400).json(JSON.stringify(e))
     }
