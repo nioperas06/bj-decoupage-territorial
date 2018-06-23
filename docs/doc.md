@@ -1,5 +1,4 @@
 FORMAT: 1A
-HOST: https://alpha-api.app.net
 
 # bj-decoupage-territorial API
 API permettant de récupérer les informations du découpage territorial au Bénin.

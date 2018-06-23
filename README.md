@@ -1,5 +1,20 @@
-<p align="center">
-  <a href="#" target="blank"><img src="https://lesplusbeauxdrapeauxdumonde.files.wordpress.com/2016/10/flag-1040531_1280.png?w=600&h=400" width="320" alt="Benin" /></a>
-</p>
+# bj-decoupage-territorial
 
-  <p align="center">API pour le découpage territorial au Bénin</p>
+API (non officielle) pour obtenir des informations de base sur les départements, communes, arrondissements et les quartiers du Bénin. Elle s'inspire du fichier du découpage territorial du Bénin proposé par [leplutonien](https://github.com/leplutonien/decoupage_territorial_benin).
+
+[![bj-decoupage-territorial](preview.png)](https://github.com/nioperas06/bj-decoupage-territorial)
+
+
+# Stack Technique
+* [Node.js](https://nodejs.org/en/) ( [AdonisJS](https://adonisjs.com/) 😏 ) pour l'API
+* [MySQL](https://www.mysql.com/) pour stocker les données
+* [Aglio](https://github.com/danielgtaylor/aglio) & [API Blueprint](https://apiblueprint.org/) pour la doc de l'API
+* [Heroku](https://www.heroku.com/) pour le déploiement continu (Avouez que ça fait classe 😂 )
+
+# Tu as envie de donner un coup de pouce?
+> Bah il y a à faire 😁
+* Ecrire les tests ( C'est con, mais c'est utile 😛 )
+* Améliorer la doc 📚 
+* Rajouter des nouvelles infos, donc écrire du code 🏄
+* Mettre un petit star ⭐️ à ce dépôt.
+
