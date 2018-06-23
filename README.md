@@ -18,3 +18,6 @@
 * Rajouter des nouvelles infos, donc écrire du code 🏄
 * Mettre un petit star ⭐️ à ce dépôt.
 * N'oublie pas de me suivre sur [Twitter](https://twitter.com/nioperas06) 👊!
+
+# License
+[MIT License](LICENSE.md)
