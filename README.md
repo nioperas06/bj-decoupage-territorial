@@ -12,7 +12,7 @@
 * [Heroku](https://www.heroku.com/) pour le déploiement continu (Avouez que ça fait classe 😂 )
 
 # Tu as envie de donner un coup de pouce?
-> Bah il y a à faire 😁
+> Bah il y a beaucoup à faire 😁
 * Ecrire les tests ( C'est con, mais c'est utile 😛 )
 * Améliorer la doc 📚 
 * Rajouter des nouvelles infos, donc écrire du code 🏄
