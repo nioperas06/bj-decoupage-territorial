@@ -1,9 +1,11 @@
 'use strict'
+const Department = use('App/Models/Department')
 
 class DepartmentController {
 
-  index({ response }) {
-    return response.json([])
+  async index({ response }) {
+    let departments = await Department.all()
+    return response.status(200).json(departments)
   }
 
   findTowns({ response }) {
