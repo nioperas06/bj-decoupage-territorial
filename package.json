@@ -8,6 +8,9 @@
     "start": "node server.js",
     "test": "node ace test"
   },
+  "engines": {
+    "node": "10.3.0"
+  },
   "keywords": [
     "adonisjs",
     "adonis-app"
@@ -27,7 +30,8 @@
     "@adonisjs/session": "^1.0.25",
     "@adonisjs/shield": "^1.0.6",
     "@adonisjs/vow": "^1.0.15",
-    "sqlite3": "^4.0.0"
+    "sqlite3": "^4.0.0",
+    "url-parse": "^1.4.1"
   },
   "devDependencies": {},
   "autoload": {
