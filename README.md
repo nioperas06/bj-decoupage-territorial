@@ -1,6 +1,6 @@
 # bj-decoupage-territorial
 
-API (non officielle) pour obtenir des informations de base sur les départements, communes, arrondissements et les quartiers du Bénin. Elle s'inspire du fichier du découpage territorial du Bénin proposé par [leplutonien](https://github.com/leplutonien/decoupage_territorial_benin).
+[API](https://bj-decoupage-territorial.herokuapp.com/) (non officielle) pour obtenir des informations de base sur les départements, communes, arrondissements et les quartiers du Bénin. Elle s'inspire du fichier du découpage territorial du Bénin proposé par [leplutonien](https://github.com/leplutonien/decoupage_territorial_benin).
 
 [![bj-decoupage-territorial](preview.png)](https://github.com/nioperas06/bj-decoupage-territorial)
 
