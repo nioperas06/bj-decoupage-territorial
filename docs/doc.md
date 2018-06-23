@@ -1,4 +1,5 @@
 FORMAT: 1A
+HOST: https://bj-decoupage-territorial.herokuapp.com/api/v1
 
 # bj-decoupage-territorial API
 API permettant de récupérer les informations du découpage territorial au Bénin.
