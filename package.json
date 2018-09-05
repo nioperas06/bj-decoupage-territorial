@@ -33,7 +33,7 @@
     "@adonisjs/vow": "^1.0.15",
     "mysql": "^2.15.0",
     "sqlite3": "^4.0.0",
-    "url-parse": "^1.4.1"
+    "url-parse": "^1.4.3"
   },
   "devDependencies": {
     "commitizen": "^2.10.1"
