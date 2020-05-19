@@ -9,7 +9,7 @@
 * [Node.js](https://nodejs.org/en/) ( [AdonisJS](https://adonisjs.com/) 😏 ) pour l'API
 * [MySQL](https://www.mysql.com/) pour stocker les données
 * [Aglio](https://github.com/danielgtaylor/aglio) & [API Blueprint](https://apiblueprint.org/) pour la doc de l'API
-* [Heroku](https://www.heroku.com/) pour le déploiement continu (Avouez que ça fait classe 😂 )
+* [Heroku](https://www.heroku.com/) pour le déploiement continu.
 
 # Tu as envie de donner un coup de pouce?
 > Bah il y a beaucoup à faire 😁
@@ -17,7 +17,7 @@
 * Améliorer la doc 📚 
 * Rajouter des nouvelles infos, donc écrire du code 🏄
 * Mettre un petit star ⭐️ à ce dépôt.
-* N'oublie pas de me suivre sur [Twitter](https://twitter.com/nioperas06) 👊!
+* N'oublie pas de me suivre sur [Twitter](https://twitter.com/jgantindev) 👊!
 
 # License
 [MIT License](LICENSE.md)
