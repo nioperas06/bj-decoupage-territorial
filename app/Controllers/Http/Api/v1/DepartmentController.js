@@ -1,5 +1,6 @@
 'use strict'
 const Department = use('App/Models/Department')
+const Database = use('Database')
 
 class DepartmentController {
 
@@ -45,7 +46,20 @@ class DepartmentController {
       const department = await Department.findBy(
         'name', params.name.toUpperCase()
       )
-      return response.status(200).json({'message': 'Mec, je te laisse faire ceci 😐'})
+
+      const neighborhoods = await Database
+        .select('neighborhoods.name')
+        .table('neighborhoods')
+        .innerJoin('districts', 'districts.id', 'neighborhoods.district_id')
+        .innerJoin('towns', 'towns.id', 'districts.town_id')
+        .innerJoin('departments', 'departments.id', 'towns.department_id')
+        .where('departments.name', department.name)
+
+      return response.status(200).json({
+        'department': department.name,
+        'neighborhoods': neighborhoods
+      })
+      
     } catch (e) {
       return response.status(400).json(JSON.stringify(e))
     }
