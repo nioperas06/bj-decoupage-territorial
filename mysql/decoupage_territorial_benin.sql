@@ -1,4 +1,45 @@
-INSERT INTO departments(id,name) VALUES
+-- phpMyAdmin SQL Dump
+-- version 4.9.5deb2
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Dec 18, 2021 at 06:30 PM
+-- Server version: 8.0.27-0ubuntu0.20.04.1
+-- PHP Version: 7.4.26
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `decoupage_territorial_benin`
+--
+CREATE DATABASE IF NOT EXISTS `decoupage_territorial_benin` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `decoupage_territorial_benin`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `departments`
+--
+
+CREATE TABLE `departments` (
+  `id` int UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `departments`
+--
+
+INSERT INTO `departments` (`id`, `name`) VALUES
 (1, 'ALIBORI'),
 (2, 'ATACORA'),
 (3, 'ATLANTIQUE'),
@@ -12,86 +53,23 @@ INSERT INTO departments(id,name) VALUES
 (11, 'PLATEAU'),
 (12, 'ZOU');
 
-INSERT INTO towns(id,name,department_id) VALUES
-(1, 'BANIKOARA', 1),
-(2, 'GOGOUNOU', 1),
-(3, 'KANDI', 1),
-(4, 'KARIMAMA', 1),
-(5, 'MALANVILLE', 1),
-(6, 'SEGBANA', 1),
-(7, 'BOUKOUMBE', 2),
-(8, 'COBLY', 2),
-(9, 'KEROU', 2),
-(10, 'KOUANDE', 2),
-(11, 'MATERI', 2),
-(12, 'NATITINGOU', 2),
-(13, 'OUASSA-PEHUNCO', 2),
-(14, 'TANGUIETA', 2),
-(15, 'TOUKOUNTOUNA', 2),
-(16, 'ABOMEY-CALAVI', 3),
-(17, 'ALLADA', 3),
-(18, 'KPOMASSE', 3),
-(19, 'OUIDAH', 3),
-(20, 'SO-AVA', 3),
-(21, 'TOFFO', 3),
-(22, 'TORI-BOSSITO', 3),
-(23, 'ZE', 3),
-(24, 'BEMBEREKE', 4),
-(25, 'KALALE', 4),
-(26, 'N''DALI', 4),
-(27, 'NIKKI', 4),
-(28, 'PARAKOU', 4),
-(29, 'PERERE', 4),
-(30, 'SINENDE', 4),
-(31, 'TCHAOUROU', 4),
-(32, 'BANTE', 5),
-(33, 'DASSA-ZOUME', 5),
-(34, 'GLAZOUE', 5),
-(35, 'OUESSE', 5),
-(36, 'SAVALOU', 5),
-(37, 'SAVE', 5),
-(38, 'APLAHOUE', 6),
-(39, 'DJAKOTOMEY', 6),
-(40, 'DOGBO', 6),
-(41, 'KLOUEKANMEY', 6),
-(42, 'LALO', 6),
-(43, 'TOVIKLIN', 6),
-(44, 'BASSILA', 7),
-(45, 'COPARGO', 7),
-(46, 'DJOUGOU', 7),
-(47, 'OUAKE', 7),
-(48, 'COTONOU', 8),
-(49, 'ATHIEME', 9),
-(50, 'BOPA', 9),
-(51, 'COME', 9),
-(52, 'GRAND-POPO', 9),
-(53, 'HOUEYOGBE', 9),
-(54, 'LOKOSSA', 9),
-(55, 'ADJARRA', 10),
-(56, 'ADJOHOUN', 10),
-(57, 'AGUEGUES', 10),
-(58, 'AKPRO-MISSERETE', 10),
-(59, 'AVRANKOU', 10),
-(60, 'BONOU', 10),
-(61, 'DANGBO', 10),
-(62, 'PORTO-NOVO', 10),
-(63, 'SEME-PODJI', 10),
-(64, 'ADJA-OUERE', 11),
-(65, 'IFANGNI', 11),
-(66, 'KETOU', 11),
-(67, 'POBE', 11),
-(68, 'SAKETE', 11),
-(69, 'ABOMEY', 12),
-(70, 'AGBANGNIZOUN', 12),
-(71, 'BOHICON', 12),
-(72, 'COVE', 12),
-(73, 'DJIDJA', 12),
-(74, 'OUINHI', 12),
-(75, 'ZAGNANADO', 12),
-(76, 'ZA-KPOTA', 12),
-(77, 'ZOGBODOMEY', 12);
+-- --------------------------------------------------------
 
-INSERT INTO districts(id,name,town_id) VALUES
+--
+-- Table structure for table `districts`
+--
+
+CREATE TABLE `districts` (
+  `id` int UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `town_id` int UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `districts`
+--
+
+INSERT INTO `districts` (`id`, `name`, `town_id`) VALUES
 (1, 'FOUNOUGO', 1),
 (2, 'GOMPAROU', 1),
 (3, 'GOUMORI', 1),
@@ -173,7 +151,7 @@ INSERT INTO districts(id,name,town_id) VALUES
 (79, 'TOBRE', 13),
 (80, 'PEHUNCO', 13),
 (81, 'COTIAKOU', 14),
-(82, 'N''DAHONTA', 14),
+(82, 'N\'DAHONTA', 14),
 (83, 'TAIACOU', 14),
 (84, 'TANONGOU', 14),
 (85, 'TANGUIETA', 14),
@@ -269,7 +247,7 @@ INSERT INTO districts(id,name,town_id) VALUES
 (175, 'GBEGOUROU', 26),
 (176, 'OUENOU', 26),
 (177, 'SIRAROU', 26),
-(178, 'N''DALI', 26),
+(178, 'N\'DALI', 26),
 (179, 'BIRO', 27),
 (180, 'GNONKOUROKALI', 27),
 (181, 'OUENOU', 27),
@@ -639,7 +617,23 @@ INSERT INTO districts(id,name,town_id) VALUES
 (545, 'ZOUKOU', 77),
 (546, 'ZOGBODOMEY CENTRE', 77);
 
-INSERT INTO neighborhoods(id,name,district_id) VALUES
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `neighborhoods`
+--
+
+CREATE TABLE `neighborhoods` (
+  `id` int UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `district_id` int UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `neighborhoods`
+--
+
+INSERT INTO `neighborhoods` (`id`, `name`, `district_id`) VALUES
 (1, 'BOFOUNOU', 1),
 (2, 'FOUNOUGO-BOUTERA', 1),
 (3, 'FOUNOUGO-GAH', 1),
@@ -732,7 +726,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (90, 'TINTINMOU', 9),
 (91, 'TINTINMOU-GAH', 9),
 (92, 'TOURA GAH', 9),
-(93, 'TOURA-BIO N''WOROU', 9),
+(93, 'TOURA-BIO N\'WOROU', 9),
 (94, 'TOURA-YOKPAROU', 9),
 (95, 'ARBONGA', 10),
 (96, 'AVIATION', 10),
@@ -1207,7 +1201,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (565, 'PIKIRE-ADAGA', 56),
 (566, 'SINAGOUROU', 56),
 (567, 'TOUDAKOU BANYIROU', 56),
-(568, 'WAROU N''GOUROU', 56),
+(568, 'WAROU N\'GOUROU', 56),
 (569, 'YAKIN-MOTOKO', 56),
 (570, 'BIRNI MARO', 57),
 (571, 'BIRNI-KANKOULKA', 57),
@@ -1318,7 +1312,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (676, 'KPEREHOUN', 65),
 (677, 'MAHONTIKA', 65),
 (678, 'NODI', 65),
-(679, 'N''TCHIEGA', 65),
+(679, 'N\'TCHIEGA', 65),
 (680, 'TAMPOURE-POGUE', 65),
 (681, 'YEDEKAHOUN', 65),
 (682, 'BAMPORA', 66),
@@ -1402,7 +1396,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (760, 'TEPENTE', 72),
 (761, 'TIGNANPETI', 72),
 (762, 'KOUTIE TCHATIDO', 73),
-(763, 'KOUWA N''PONGOU', 73),
+(763, 'KOUWA N\'PONGOU', 73),
 (764, 'MOUPEMOU', 73),
 (765, 'TAKONTA', 73),
 (766, 'TCHOUMI-TCHOUMI', 73),
@@ -1484,7 +1478,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (842, 'DONDONGOU', 82),
 (843, 'KOUGNIERI', 82),
 (844, 'NATAGATA', 82),
-(845, 'N''DAHONTA', 82),
+(845, 'N\'DAHONTA', 82),
 (846, 'NIGNERI', 82),
 (847, 'SAMMONGOU', 82),
 (848, 'SONTA', 82),
@@ -1594,7 +1588,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (952, 'GBEGNIGAN-MIDOKPO', 90),
 (953, 'GBODJE-WOMEY', 90),
 (954, 'GNINKINDJI', 90),
-(955, 'GODOMEY-N''GBEHO', 90),
+(955, 'GODOMEY-N\'GBEHO', 90),
 (956, 'GODOMEY-TOGOUDO', 90),
 (957, 'HEDOME', 90),
 (958, 'HELOUTO', 90),
@@ -2293,8 +2287,8 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (1651, 'BOUANRI-SONGOURA', 164),
 (1652, 'GANDO-BOROU', 164),
 (1653, 'GBEROU-DABA', 164),
-(1654, 'GUERA-N''KALI', 164),
-(1655, 'GUERA-N''KALI-TASSI', 164),
+(1654, 'GUERA-N\'KALI', 164),
+(1655, 'GUERA-N\'KALI-TASSI', 164),
 (1656, 'KASSAROU', 164),
 (1657, 'KASSAROU GNEL BABI', 164),
 (1658, 'SISSIGOUROU', 164),
@@ -2422,7 +2416,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (1780, 'ANGARADEBOU', 174),
 (1781, 'BIO-SIKA', 174),
 (1782, 'BORI', 174),
-(1783, 'BORI-N''DARNON', 174),
+(1783, 'BORI-N\'DARNON', 174),
 (1784, 'BORI-PEULH', 174),
 (1785, 'DARNON-GOUROU', 174),
 (1786, 'GBITEBOU', 174),
@@ -2473,7 +2467,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (1831, 'BANHOUN', 178),
 (1832, 'BANHOUN-GANDO', 178),
 (1833, 'KERI', 178),
-(1834, 'N''DALI-PEULH', 178),
+(1834, 'N\'DALI-PEULH', 178),
 (1835, 'SAKAROU', 178),
 (1836, 'SINISSON', 178),
 (1837, 'SUANIN', 178),
@@ -2804,8 +2798,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (2162, 'SAKANA-KPEBA', 204),
 (2163, 'SOUMON-GAH', 204),
 (2164, 'TCHATCHOU', 204);
-
-INSERT INTO neighborhoods(id,name,district_id) VALUES
+INSERT INTO `neighborhoods` (`id`, `name`, `district_id`) VALUES
 (2165, 'TEKPAROU', 204),
 (2166, 'TOUKOSSARI', 204),
 (2167, 'WORIA', 204),
@@ -2830,8 +2823,8 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (2186, 'YAMBOUAN', 205),
 (2187, 'CLOUBOU', 206),
 (2188, 'KADJOGBE', 206),
-(2189, 'N''TCHOCHE', 206),
-(2190, 'N''TCHON', 206),
+(2189, 'N\'TCHOCHE', 206),
+(2190, 'N\'TCHON', 206),
 (2191, 'BANON', 207),
 (2192, 'ILLAGBO', 207),
 (2193, 'ILLARE', 207),
@@ -2883,7 +2876,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (2239, 'BANIGBE', 215),
 (2240, 'BETECOUCOU', 215),
 (2241, 'HOLLI-GAMBA-ITCHEDOUN', 215),
-(2242, 'N''GBEGA', 215),
+(2242, 'N\'GBEGA', 215),
 (2243, 'AWAYA', 216),
 (2244, 'DOVI-SOME', 216),
 (2245, 'GBAFFO', 216),
@@ -3067,7 +3060,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (2423, 'KILIBO-ADJOUGOU', 239),
 (2424, 'KILIBO-GARE', 239),
 (2425, 'KILIBO-OLATA', 239),
-(2426, 'OLOUNI-N''GBE', 239),
+(2426, 'OLOUNI-N\'GBE', 239),
 (2427, 'OWOLAFE', 239),
 (2428, 'SURU-LERE', 239),
 (2429, 'YAOUI', 239),
@@ -3080,8 +3073,8 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (2436, 'WODJI', 240),
 (2437, 'DOKOUNDOHO', 241),
 (2438, 'EVAI-GBAFFO', 241),
-(2439, 'N''GBEHOUEDO', 241),
-(2440, 'N''GBEHOUEDO-ROUTO', 241),
+(2439, 'N\'GBEHOUEDO', 241),
+(2440, 'N\'GBEHOUEDO-ROUTO', 241),
 (2441, 'ODOUGBA', 241),
 (2442, 'TCHEDJANNANGNON', 241),
 (2443, 'ZOGBA-TREKOU', 241),
@@ -3140,7 +3133,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (2496, 'MEDETEKPO', 247),
 (2497, 'MINIKI', 247),
 (2498, 'MONDJI', 247),
-(2499, 'N''DASSO', 247),
+(2499, 'N\'DASSO', 247),
 (2500, 'AGBOMADIN', 248),
 (2501, 'AHITO', 248),
 (2502, 'AWIANKANME', 248),
@@ -3211,7 +3204,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (2567, 'DOISSA SOKPA', 257),
 (2568, 'LOGBO', 257),
 (2569, 'MOUSSOUNGO', 257),
-(2570, 'N''GBEHAN', 257),
+(2570, 'N\'GBEHAN', 257),
 (2571, 'BESSE OWODE', 258),
 (2572, 'DJABATA', 258),
 (2573, 'IGBODJA', 258),
@@ -3779,7 +3772,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (3135, 'KOUBOKOUBORE', 320),
 (3136, 'KOUKOULBENDI', 320),
 (3137, 'KOUTCHANTI', 320),
-(3138, 'N''DAM', 320),
+(3138, 'N\'DAM', 320),
 (3139, 'PARGOUTE', 320),
 (3140, 'SETRAH', 320),
 (3141, 'BAMISSO', 321),
@@ -3983,7 +3976,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (3339, 'KAKPESSIA', 339),
 (3340, 'KPAKPALARE', 339),
 (3341, 'KPELI-FADA', 339),
-(3342, 'N''DJAKADA', 339),
+(3342, 'N\'DJAKADA', 339),
 (3343, 'TROUCARE-BAS', 339),
 (3344, 'KAWADO', 340),
 (3345, 'LANDA', 340),
@@ -4009,7 +4002,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (3365, 'DANDJI HOKANME', 342),
 (3366, 'DONATEN', 342),
 (3367, 'FINAGNON', 342),
-(3368, 'N''VENAMEDE', 342),
+(3368, 'N\'VENAMEDE', 342),
 (3369, 'SURU LERE', 342),
 (3370, 'TANTO', 342),
 (3371, 'TCHANHOUNKPAME', 342),
@@ -4161,7 +4154,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (3517, 'AGLA PETIT CHATEAU', 354),
 (3518, 'AGLA SUD', 354),
 (3519, 'AGLAFINAFA', 354),
-(3520, 'AHOGBOHOUE CITE DE L''EXPERIENCE', 354),
+(3520, 'AHOGBOHOUE CITE DE L\'EXPERIENCE', 354),
 (3521, 'AHOGBOHOUE CITE EUCARISTIE', 354),
 (3522, 'AIBATIN KPOTA', 354),
 (3523, 'CITE ADJAHA', 354),
@@ -4459,7 +4452,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (3815, 'KPANSOUINGOH', 380),
 (3816, 'MAIBOUI', 380),
 (3817, 'MAIBOUI-AKLOH', 380),
-(3818, 'N''KONOUHOUE', 380),
+(3818, 'N\'KONOUHOUE', 380),
 (3819, 'TOKPA', 380),
 (3820, 'AGLE', 381),
 (3821, 'AKLOH', 381),
@@ -4686,8 +4679,8 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (4042, 'ZOUNGBOME', 403),
 (4043, 'ZOUNGODO', 403),
 (4044, 'AKPADON', 404),
-(4045, 'BE''MBE', 404),
-(4046, 'B''MBE AKPA', 404),
+(4045, 'BE\'MBE', 404),
+(4046, 'B\'MBE AKPA', 404),
 (4047, 'DJEKPE', 404),
 (4048, 'GBODJE', 404),
 (4049, 'GOUSSA', 404),
@@ -4890,7 +4883,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (4246, 'AKOKPONAWA', 429),
 (4247, 'FINGNINKANME', 429),
 (4248, 'MITRO', 429);
-INSERT INTO neighborhoods(id,name,district_id) VALUES
+INSERT INTO `neighborhoods` (`id`, `name`, `district_id`) VALUES
 (4249, 'YOKON', 429),
 (4250, 'ZOUNGUE', 429),
 (4251, 'ZOUNGUE SAI LAGARE', 429),
@@ -4977,7 +4970,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (4332, 'GBODJE', 434),
 (4333, 'GUEVIE', 434),
 (4334, 'HLOGOU OU HLONGOU', 434),
-(4335, 'HOUINME CHATEAU D''EAU', 434),
+(4335, 'HOUINME CHATEAU D\'EAU', 434),
 (4336, 'HOUINME DJAGUIDI', 434),
 (4337, 'HOUINME GANTO', 434),
 (4338, 'HOUINME GBEDJROMEDE', 434),
@@ -5767,7 +5760,7 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (5122, 'GBATEZOUNME', 523),
 (5123, 'GBONOU', 523),
 (5124, 'MASSAGBO', 523),
-(5125, 'N''DOKPO', 523),
+(5125, 'N\'DOKPO', 523),
 (5126, 'SOWE', 523),
 (5127, 'ZINGON', 523),
 (5128, 'DON-ALIHO', 524),
@@ -5947,3 +5940,159 @@ INSERT INTO neighborhoods(id,name,district_id) VALUES
 (5302, 'ZADO-ADAGON', 546),
 (5303, 'ZADO-GAGBE', 546),
 (5304, 'ZOGBODOMEY', 546);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `towns`
+--
+
+CREATE TABLE `towns` (
+  `id` int UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `department_id` int UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `towns`
+--
+
+INSERT INTO `towns` (`id`, `name`, `department_id`) VALUES
+(1, 'BANIKOARA', 1),
+(2, 'GOGOUNOU', 1),
+(3, 'KANDI', 1),
+(4, 'KARIMAMA', 1),
+(5, 'MALANVILLE', 1),
+(6, 'SEGBANA', 1),
+(7, 'BOUKOUMBE', 2),
+(8, 'COBLY', 2),
+(9, 'KEROU', 2),
+(10, 'KOUANDE', 2),
+(11, 'MATERI', 2),
+(12, 'NATITINGOU', 2),
+(13, 'OUASSA-PEHUNCO', 2),
+(14, 'TANGUIETA', 2),
+(15, 'TOUKOUNTOUNA', 2),
+(16, 'ABOMEY-CALAVI', 3),
+(17, 'ALLADA', 3),
+(18, 'KPOMASSE', 3),
+(19, 'OUIDAH', 3),
+(20, 'SO-AVA', 3),
+(21, 'TOFFO', 3),
+(22, 'TORI-BOSSITO', 3),
+(23, 'ZE', 3),
+(24, 'BEMBEREKE', 4),
+(25, 'KALALE', 4),
+(26, 'N\'DALI', 4),
+(27, 'NIKKI', 4),
+(28, 'PARAKOU', 4),
+(29, 'PERERE', 4),
+(30, 'SINENDE', 4),
+(31, 'TCHAOUROU', 4),
+(32, 'BANTE', 5),
+(33, 'DASSA-ZOUME', 5),
+(34, 'GLAZOUE', 5),
+(35, 'OUESSE', 5),
+(36, 'SAVALOU', 5),
+(37, 'SAVE', 5),
+(38, 'APLAHOUE', 6),
+(39, 'DJAKOTOMEY', 6),
+(40, 'DOGBO', 6),
+(41, 'KLOUEKANMEY', 6),
+(42, 'LALO', 6),
+(43, 'TOVIKLIN', 6),
+(44, 'BASSILA', 7),
+(45, 'COPARGO', 7),
+(46, 'DJOUGOU', 7),
+(47, 'OUAKE', 7),
+(48, 'COTONOU', 8),
+(49, 'ATHIEME', 9),
+(50, 'BOPA', 9),
+(51, 'COME', 9),
+(52, 'GRAND-POPO', 9),
+(53, 'HOUEYOGBE', 9),
+(54, 'LOKOSSA', 9),
+(55, 'ADJARRA', 10),
+(56, 'ADJOHOUN', 10),
+(57, 'AGUEGUES', 10),
+(58, 'AKPRO-MISSERETE', 10),
+(59, 'AVRANKOU', 10),
+(60, 'BONOU', 10),
+(61, 'DANGBO', 10),
+(62, 'PORTO-NOVO', 10),
+(63, 'SEME-PODJI', 10),
+(64, 'ADJA-OUERE', 11),
+(65, 'IFANGNI', 11),
+(66, 'KETOU', 11),
+(67, 'POBE', 11),
+(68, 'SAKETE', 11),
+(69, 'ABOMEY', 12),
+(70, 'AGBANGNIZOUN', 12),
+(71, 'BOHICON', 12),
+(72, 'COVE', 12),
+(73, 'DJIDJA', 12),
+(74, 'OUINHI', 12),
+(75, 'ZAGNANADO', 12),
+(76, 'ZA-KPOTA', 12),
+(77, 'ZOGBODOMEY', 12);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `departments`
+--
+ALTER TABLE `departments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `districts`
+--
+ALTER TABLE `districts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `neighborhoods`
+--
+ALTER TABLE `neighborhoods`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `towns`
+--
+ALTER TABLE `towns`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `departments`
+--
+ALTER TABLE `departments`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `districts`
+--
+ALTER TABLE `districts`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=547;
+
+--
+-- AUTO_INCREMENT for table `neighborhoods`
+--
+ALTER TABLE `neighborhoods`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5305;
+
+--
+-- AUTO_INCREMENT for table `towns`
+--
+ALTER TABLE `towns`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

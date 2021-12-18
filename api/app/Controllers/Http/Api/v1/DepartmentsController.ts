@@ -1,10 +1,12 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Department from 'App/Models/Department'
 import Neighborhood from 'App/Models/Neighborhood';
+import Env from '@ioc:Adonis/Core/Env'
 
 export default class DepartmentsController {
 
     public async getAll({ response }: HttpContextContract) {
+        console.log(Env.get('MYSQL_HOST'))
         try {
             const departments = await Department.query().select('name')
             return response.status(200).send({
