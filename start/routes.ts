@@ -20,9 +20,6 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async () => {
-    return { hello: 'world' }
-})
 
 Route.group(() => {
     // Departments routes
@@ -43,3 +40,10 @@ Route.group(() => {
     // Neighborhood routes
     Route.get('/neighborhoods', 'NeighborhoodsController.getNeighborhoods')
 }).prefix('/api/v1').namespace('App/Controllers/Http/Api/v1')
+
+Route.any('*', async ({ view }) => {
+    const specUrl = 'swagger.json'
+    return view.render('swagger', { specUrl })
+})
+
+

@@ -1,0 +1,82 @@
+/api/v1/towns:
+  get:
+    tags:
+      - Town
+    responses:
+      200:
+        description: Get all towns
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                towns:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+
+
+
+/api/v1/towns/{name}/districts:
+  get:
+    tags:
+      - Town
+    parameters:
+      - name: name
+        in: path
+        required: true
+        description: town name
+        schema:
+          type: string
+          example: cotonou
+    responses:
+      200:
+        description: towns districts
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                town:
+                  type: string
+                districts:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+
+
+/api/v1/towns/{name}/neighborhoods:
+  get:
+    tags:
+      - Town
+    parameters:
+      - name: name
+        in: path
+        required: true
+        description: towns name
+        schema:
+          type: string
+          example: cotonou
+    responses:
+      200:
+        description: towns neighborhoods
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                town:
+                  type: string
+                neighborhoods:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string

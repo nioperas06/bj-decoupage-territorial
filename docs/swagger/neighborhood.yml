@@ -1,0 +1,42 @@
+/api/v1/neighborhoods:
+  get:
+    tags:
+      - Neighborhood
+    parameters:
+      - name: page
+        in: query
+        required: false
+        description: page number
+        schema:
+          type: number
+          default: 1
+      - name: page_size
+        in: query
+        required: false
+        description: page size
+        schema:
+          type: number
+          default: 20
+    responses:
+      200:
+        description: district neighborhoods
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                total:
+                  type: number
+                per_page:
+                  type: number
+                page:
+                  type: number
+                last_page:
+                  type: number
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string

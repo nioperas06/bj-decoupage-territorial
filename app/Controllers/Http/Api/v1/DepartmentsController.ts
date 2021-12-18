@@ -56,7 +56,7 @@ export default class DepartmentsController {
                 .select('neighborhoods.name')
             return response.status(200).send({
                 "department": department?.name,
-                "districts": neighborhoods
+                "neighborhoods": neighborhoods
             });
         } catch (error) {
             return response.status(400).send(error)

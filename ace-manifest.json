@@ -261,6 +261,17 @@
           "alias": "c"
         }
       ]
+    },
+    "swagger:generate": {
+      "settings": {
+        "loadApp": true
+      },
+      "commandPath": "adonis5-swagger/build/commands/GenerateSwaggerFile",
+      "commandName": "swagger:generate",
+      "description": "Generate swagger file",
+      "args": [],
+      "aliases": [],
+      "flags": []
     }
   },
   "aliases": {}

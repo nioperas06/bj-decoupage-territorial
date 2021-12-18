@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+	<script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js"></script>
+	<script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+	<link rel="stylesheet" href="//unpkg.com/swagger-ui-dist@3/swagger-ui.css"/>
+	<script>
+		window.onload = () => {
+			let ui = SwaggerUIBundle({
+				url: "{{ specUrl }}",
+				dom_id: "#swagger-ui",
+				presets: [
+					SwaggerUIBundle.presets.apis,
+					SwaggerUIBundle.SwaggerUIStandalonePreset
+				],
+				plugins: [
+					SwaggerUIBundle.plugins.DownloadUrl
+				],
+			})
+
+			window.ui = ui
+		}
+	</script>
+</head>
+<body>
+	<div id="swagger-ui"></div>
+</body>
+</html>
