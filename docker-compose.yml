@@ -1,63 +1,28 @@
-version: "3.2"
+version: "3.6"
 
 services:
-  bj-decoupage-territorial-mysql:
-    build: ./mysql
+  decoupage-db:
+    image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
-    container_name: bj-decoupage-territorial-mysql
-    healthcheck:
-      interval: 300s
-      timeout: 400s
-      retries: 10
-
-    # We'd like to be able to access our data files on our local filesystem
+    container_name: decoupage-db
     volumes:
-      - ./log/mysql:/var/log/mysql
-      
+      - ./data:/docker-entrypoint-initdb.d
     environment:
-      # So you don't have to use root, but you can if you like
-      MYSQL_USER: 'decoupage_territorial_benin'
-      # You can use whatever password you like
-      MYSQL_PASSWORD: 'decoupage_territorial_benin'
-      MYSQL_DATABASE: 'decoupage_territorial_benin'
-      # Password for root access
-      MYSQL_ROOT_PASSWORD: 'decoupage_territorial_benin'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'secret'
+      MYSQL_DATABASE: 'decoupage'
+      MYSQL_ROOT_PASSWORD: 'secret'
 
-  bj-decoupage-territorial-api:
-    image: bj-decoupage-territorial-api
-    container_name: bj-decoupage-territorial-api
-    restart: unless-stopped
-    # We specify the image for this service and where we can build that image from
+  decoupage-api:
+    container_name: decoupage-api
     build:
-      context: ./api
+      context: .
       dockerfile: Dockerfile
-
-    env_file:
-      ./api/.env
-    environment:
-      - PORT=3333
-      - HOST=0.0.0.0
-      - NODE_ENV=development
-      - APP_KEY=MdWBJpbs-MJxm_zd3u9Y-cg_9tD9y4MM
-      - DRIVE_DISK=local
-
-      #MySQL connection
-      - DB_CONNECTION=mysql
-      - MYSQL_HOST=bj-decoupage-territorial-mysql
-      - MYSQL_PORT=3306
-      - MYSQL_USER=decoupage_territorial_benin
-      - MYSQL_PASSWORD=decoupage_territorial_benin
-      - MYSQL_DB_NAME=decoupage_territorial_benin
-      
-      - CACHE_VIEWS=false
-
-    # We can use these volumes to specify where we want our files to be accessible at.
-    # It's best to house all node modules on a separate volume
-    # volumes:
-    #  - "./:/app"
-    #  - "./node_modules"
+    volumes:
+      - .:/home/node/app
+      - /home/node/app/node_modules
     ports:
       - "3333:3333"
     depends_on:
-      - bj-decoupage-territorial-mysql
+      - decoupage-db
