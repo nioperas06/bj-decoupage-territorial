@@ -1,0 +1,28 @@
+version: "3.6"
+
+services:
+  decoupage-db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    container_name: decoupage-db
+    volumes:
+      - ./data:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'secret'
+      MYSQL_DATABASE: 'decoupage'
+      MYSQL_ROOT_PASSWORD: 'secret'
+
+  decoupage-api:
+    container_name: decoupage-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/home/node/app
+      - /home/node/app/node_modules
+    ports:
+      - "3333:3333"
+    depends_on:
+      - decoupage-db
